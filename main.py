@@ -77,7 +77,7 @@ try:
 
     #Looping and saving data into table
     for i in FinResult:
-        c.setFillColorRGB(0, 0, 1)
+
         proptype, locat, price, bath, bed, sqft = i[0], i[1], int(i[2]), round(i[3]), round(i[4]), round(i[5])
         Reportdata.append((proptype, locat, price, bath, bed, sqft))
 
@@ -90,5 +90,6 @@ try:
 
     #Finally saving the data in pdf
     c.save()
-except:
-    print("Error")
+except Exception as ex:
+    print(ex)
+    
